@@ -10,16 +10,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="header">
+    <div class="header">
         <h1>Library</h1>
+        <button class="btn-add-book">NEW BOOK...</button>
     </div>
-    <div id="books-container">
+    <div class="books-container">
         <h2>Books</h2>
-        <div id="books">
+        <div class="books">
 
         </div>
     </div>
-    <div id="footer">
+    <div class="modal-container">
+        <form class="frm-add-book" action="" method="dialog">
+            <h1>New Book</h1>
+            <ul>
+                <li>
+                    <label for="title">Title<abbr title="required" aria-label="required">*</abbr></label>
+                    <input type="text" id="title" title="book_title" placeholder="book title">
+                </li>
+                <li>
+                    <label for="author">Author<abbr title="required" aria-label="required">*</abbr></label>
+                    <input type="text" id="author" title="book_author" placeholder="book author">
+                </li>
+                <li>
+                    <label for="pages">Pages</label>
+                    <input type="text" id="pages" title="book_pages" placeholder="number of pages">
+                </li>
+                <li>
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="book_notes" placeholder="notes"></textarea>
+                </li>
+                <li class="frm-add-book__btn-li">
+                    <button class="frm-add-book__btn-submit" type="submit">Add book</button>
+                </li>
+                <li class="frm-add-book__btn-li">
+                    <button class="frm-add-book__btn-cancel" type="button">Cancel</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="footer">
         <span>&copy2021 David Ravanbakhsh</span>
         <a href="https://github.com/ravanbak" target="_blank"><i class="fa fa-github fa-2x"></i></a>
     </div>   
