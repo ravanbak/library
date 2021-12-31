@@ -12,6 +12,7 @@ body {
 
 .books-container h2 {
     margin: 10px 60px;
+    text-align: center;
 }
 
 .books {
@@ -51,8 +52,7 @@ body {
 }
 
 .book--read {
-    border-color: rgb(0, 168, 0);
-    
+    border-color: rgb(0, 168, 0);    
 }
 
 .modal-container {
@@ -66,13 +66,20 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.frm-add-book input,
+.frm-add-book textarea {
+    font-size: 0.75em;
+    padding: 4px 2px;
+}
+
 .frm-add-book {
-    width: 300px;
-    margin: 150px auto;
-    border: 1px solid grey;
+    width: 60%;
+    margin: 120px auto;
+    border: 1px solid blue;
     border-radius: 15px;
-    padding: 30px;
-    background: whitesmoke;
+    padding: 20px;
+    background: lightgray;
+    font-size: 1.25em;
 }
 
 abbr {
@@ -89,22 +96,26 @@ form li + li {
     margin-top: 1em;
 }
 
+/*
 label {
     display: inline-block;
     text-align: left;
     width: 300px;
     vertical-align: top;
 }
+*/
 
-input, textarea {
-    width: 300px;
+input[type=text], 
+textarea {
+    width: 100%;
     box-sizing: border-box;
-    border: 1px solid grey;
+    border: 1px solid blue;
 }
 
 textarea {
     vertical-align: top;
     height: 4em;
+    font-family: inherit;
 }
 
 .frm-add-book button {
@@ -114,5 +125,6 @@ textarea {
 input:focus,
 textarea:focus {
   /* Additional highlight for focused elements */
-  border-color: #000;
+  /*border: 2px solid red;*/
+  border-color: red;
 }
