@@ -1,44 +1,99 @@
 body {
     display: flex;
     flex-direction: column;
+    align-content: center;
     justify-content: center;
-    align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: rgb(255, 254, 248);
-    /*box-sizing: border-box;*/
-    /*max-width: 700px;*/
+    background: #1f2937;
+    min-width: 300px;
+    max-width: 1200px;
     margin: auto;
 }
 
-.books-container h2 {
-    margin: 10px 60px;
-    text-align: center;
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.dashboard {
+    display: flex;
+    flex-grow: 1;
+    margin: auto 20px;
+    padding: 0 50px;
+    max-width: 900px;
+    border-radius: 20px;
+    justify-content: space-between;
+    background: whitesmoke;
+}
+
+.btn-add-book {
+    height: 5em;
+    width: 200px;
+    margin: 20px 0;
+    background: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-add-book:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 .books {
     display: flex;
     flex-wrap: wrap;
-    margin: auto 50px;
+    justify-content: center;
 }
 
 .book {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    justify-content: top;
+    flex-grow: 0;
     align-items: center;
     width: 180px;
-    /*max-width: 180px;*/
     height: 240px;
     margin: 25px;
     padding: 15px;
-    border: 3px solid darkslategrey;
+    border: 3px solid dodgerblue;
     border-radius: 5px;
-    background: rgb(255, 247, 234);
-    box-shadow: 5px 5px 10px 5px #00000034;
+    background: whitesmoke;
+    box-shadow: 3px 3px 8px 3px #00000034;
 }
 
-.book > * {
+.book .book__input-container {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    align-self: flex-end;
+    justify-content: space-between;
+}
+
+.book .book__input-container button {
+    background: darkred;
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+
+.book .book__input-container .book__chk-container {
+    display: flex;
+    border: 1px solid #1F2937;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.book span {
     /*overflow-wrap: break-word;*/
     overflow-wrap: anywhere;
     /*word-break: break-all;*/
@@ -51,8 +106,13 @@ body {
     font-weight: bold;
 }
 
-.book--read {
-    border-color: rgb(0, 168, 0);    
+.book.book--read {
+    border-color: rgb(0, 187, 0);    
+    box-shadow: 3px 3px 8px 3px #00770055;
+}
+
+.book__chk-container.book--read {
+    background: lightgreen;
 }
 
 .modal-container {
@@ -73,7 +133,7 @@ body {
 }
 
 .frm-add-book {
-    width: 60%;
+    width: 350px;
     margin: 120px auto;
     border: 1px solid blue;
     border-radius: 15px;
@@ -96,20 +156,12 @@ form li + li {
     margin-top: 1em;
 }
 
-/*
-label {
-    display: inline-block;
-    text-align: left;
-    width: 300px;
-    vertical-align: top;
-}
-*/
-
 input[type=text], 
 textarea {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid blue;
+    border-radius: 2px;
 }
 
 textarea {
@@ -122,7 +174,7 @@ textarea {
     width: 100px;
 }
 
-input:focus,
+input[type=text]:focus,
 textarea:focus {
   /* Additional highlight for focused elements */
   /*border: 2px solid red;*/

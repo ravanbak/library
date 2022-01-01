@@ -54,8 +54,8 @@ function libraryToggleBookRead(e) {
 }
 
 function displayBooks() {
-    let h2 = document.querySelector('.books-container h2');
-    h2.textContent = myLibrary.length + ' books';
+    let h2 = document.querySelector('.dashboard h2');
+    h2.textContent = `You have ${myLibrary.length} books`;
 
     let books = document.querySelector('.books');
     
@@ -87,23 +87,27 @@ function displayBooks() {
             divBook.appendChild(info);
         }
 
-        info = document.createElement('span');
-        info.textContent = book.getReadString();
-        divBook.appendChild(info);
+        // info = document.createElement('span');
+        // info.textContent = book.getReadString();
+        // divBook.appendChild(info);
 
+        let inputContainer = document.createElement('div');
+        inputContainer.classList.add('book__input-container');
+        
         let btn = document.createElement('button');
         btn.addEventListener('click', libraryRemoveBook);
         btn.setAttribute('type', 'button');
         btn.setAttribute('data-idx', idx);
         btn.classList.add('book__btn-remove');
         btn.textContent = 'Remove';
-        divBook.appendChild(btn);
+        inputContainer.appendChild(btn);
 
         let divChk = document.createElement('div');
-
+        divChk.classList.add('book__chk-container');
+        if (book.read) divChk.classList.add('book--read');
+        
         let chk = document.createElement('input');
         chk.setAttribute('type', 'checkbox');
-
         let id = 'read' + idx;
         chk.setAttribute('id', id);
         chk.setAttribute('name', 'read');
@@ -117,7 +121,9 @@ function displayBooks() {
         lbl.textContent = 'read';
         divChk.appendChild(lbl);
 
-        divBook.appendChild(divChk);
+        inputContainer.appendChild(divChk);
+
+        divBook.appendChild(inputContainer);
 
         books.appendChild(divBook);
     });
