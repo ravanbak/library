@@ -36,19 +36,22 @@ body {
     background: rgb(231, 231, 231);
 }
 
+button {
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
 .btn-add-book {
     height: 5em;
     width: 200px;
     margin: 20px 0;
     background: dodgerblue;
     color: white;
-    border: none;
-    border-radius: 5px;
     font-weight: bold;
-}
-
-.btn-add-book:hover {
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 .books {
@@ -128,12 +131,6 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.frm-add-book input,
-.frm-add-book textarea {
-    font-size: 0.75em;
-    padding: 4px 2px;
-}
-
 .frm-add-book {
     width: 350px;
     margin: 120px auto;
@@ -144,29 +141,35 @@ body {
     font-size: 1.25em;
 }
 
-abbr {
+.frm-add-book input,
+.frm-add-book textarea {
+    font-size: 0.75em;
+    padding: 4px 2px;
+}
+
+.frm-add-book abbr {
     color: red;
 }
 
-form ul {
+.frm-add-book ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-form li + li {
+.frm-add-book li + li {
     margin-top: 1em;
 }
 
-input[type=text], 
-textarea {
+.frm-add-book input[type=text], 
+.frm-add-book textarea {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid blue;
     border-radius: 2px;
 }
 
-textarea {
+.frm-add-book textarea {
     vertical-align: top;
     height: 4em;
     font-family: inherit;
@@ -174,13 +177,25 @@ textarea {
 
 .frm-add-book button {
     width: 100px;
+    height: 30px;
+    margin: 30px 0;
 }
 
-input[type=text]:focus,
-textarea:focus {
-  /* Additional highlight for focused elements */
-  /*border: 2px solid red;*/
-  border-color: red;
+.frm-add-book .frm-add-book__btn-cancel {
+    background: red;
+    color: white;
+    margin-left: 30px;
+}
+
+
+button:hover,
+img:hover,
+.book__chk-container:hover,
+input[type=text]:hover,
+input[type=checkbox]:hover,
+textarea:hover {
+  /*border: 1px solid turquoise;*/
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .footer {

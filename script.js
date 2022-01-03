@@ -54,17 +54,20 @@ function libraryToggleBookRead(e) {
 }
 
 function displayBooks() {
+    const unread = myLibrary.filter((el) => !el.read).length;
+
     let h2 = document.querySelector('.dashboard h2');
-    h2.textContent = `You have ${myLibrary.length} books`;
+    h2.textContent = `You have ${myLibrary.length} books (${unread} unread)`;
 
     let books = document.querySelector('.books');
+
     
     // remove all books from the page
     while (books.firstChild) {
         books.removeChild(books.firstChild);
     }
 
-    myLibrary.sort((a, b) => (a.title < b.title) ? -1 : 1);
+    myLibrary.sort((a, b) => (a.title.toUpperCase() < b.title.toUpperCase()) ? -1 : 1);
 
     // display all books
     myLibrary.forEach((book, idx) => {
@@ -87,10 +90,6 @@ function displayBooks() {
             divBook.appendChild(info);
         }
 
-        // info = document.createElement('span');
-        // info.textContent = book.getReadString();
-        // divBook.appendChild(info);
-
         let inputContainer = document.createElement('div');
         inputContainer.classList.add('book__input-container');
         
@@ -100,14 +99,6 @@ function displayBooks() {
         imgTrash.addEventListener('click', libraryRemoveBook);
         imgTrash.setAttribute('data-idx', idx);
         inputContainer.appendChild(imgTrash);
-
-        // let btn = document.createElement('button');
-        // btn.addEventListener('click', libraryRemoveBook);
-        // btn.setAttribute('type', 'button');
-        // btn.setAttribute('data-idx', idx);
-        // btn.classList.add('book__btn-remove');
-        // btn.textContent = 'Remove';
-        // inputContainer.appendChild(btn);
 
         let divChk = document.createElement('div');
         divChk.classList.add('book__chk-container');
