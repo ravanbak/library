@@ -94,13 +94,20 @@ function displayBooks() {
         let inputContainer = document.createElement('div');
         inputContainer.classList.add('book__input-container');
         
-        let btn = document.createElement('button');
-        btn.addEventListener('click', libraryRemoveBook);
-        btn.setAttribute('type', 'button');
-        btn.setAttribute('data-idx', idx);
-        btn.classList.add('book__btn-remove');
-        btn.textContent = 'Remove';
-        inputContainer.appendChild(btn);
+        let imgTrash = document.createElement('img');
+        imgTrash.setAttribute('src', 'trash.svg');
+        imgTrash.classList.add('book__img-remove');
+        imgTrash.addEventListener('click', libraryRemoveBook);
+        imgTrash.setAttribute('data-idx', idx);
+        inputContainer.appendChild(imgTrash);
+
+        // let btn = document.createElement('button');
+        // btn.addEventListener('click', libraryRemoveBook);
+        // btn.setAttribute('type', 'button');
+        // btn.setAttribute('data-idx', idx);
+        // btn.classList.add('book__btn-remove');
+        // btn.textContent = 'Remove';
+        // inputContainer.appendChild(btn);
 
         let divChk = document.createElement('div');
         divChk.classList.add('book__chk-container');
