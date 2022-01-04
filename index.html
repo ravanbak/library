@@ -15,7 +15,18 @@
     </div>
     <div class="dashboard-container">
         <div class="dashboard">
-            <h2>Books</h2>
+            <div>
+                <h2>Books</h2>
+                <div class="dashboard__sort-container">
+                    <label for="booksort">Sort by</label>
+                    <select id="booksort" name="booksort">
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="pages">Pages</option>
+                        <option value="read">Read</option>
+                    </select>
+                </div>
+            </div>
             <button class="btn-add-book">NEW BOOK...</button>
         </div>
     </div>
@@ -25,30 +36,37 @@
     <div class="modal-container">
         <form class="frm-add-book" action="" method="dialog">
             <h1>New Book</h1>
-            <ul>
-                <li>
-                    <label for="title">Title<abbr title="required" aria-label="required">*</abbr></label>
-                    <input type="text" id="title" title="book_title" placeholder="book title">
-                </li>
-                <li>
-                    <label for="author">Author<abbr title="required" aria-label="required">*</abbr></label>
-                    <input type="text" id="author" title="book_author" placeholder="book author">
-                </li>
-                <li>
-                    <label for="pages">Pages</label>
-                    <input type="text" id="pages" title="book_pages" placeholder="number of pages">
-                </li>
-                <li>
-                    <label for="notes">Notes</label>
-                    <textarea id="notes" name="book_notes" placeholder="notes"></textarea>
-                </li>
-                <li>
-                    <input type="checkbox" id="read" title="book_read">
-                    <label for="read">I've read this book</label>
-                </li>
-            </ul>
-            <button class="frm-add-book__btn-submit" type="submit">Add book</button>
-            <button class="frm-add-book__btn-cancel" type="button">Cancel</button>
+            <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+            <section>
+                <ul>
+                    <li>
+                        <label for="title">Title<abbr title="required" aria-label="required">*</abbr></label>
+                        <input type="text" id="title" title="book_title" placeholder="book title">
+                    </li>
+                    <li>
+                        <label for="author">Author<abbr title="required" aria-label="required">*</abbr></label>
+                        <input type="text" id="author" title="book_author" placeholder="book author">
+                    </li>
+                    <li>
+                        <label for="pages">Pages</label>
+                        <input type="text" id="pages" title="book_pages" placeholder="number of pages">
+                    </li>
+                    <li>
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="book_notes" placeholder="notes"></textarea>
+                    </li>
+                    <li>
+                        <div class="input-container">
+                            <input type="checkbox" id="read" title="book_read">
+                            <label for="read">I've read this book</label>
+                        </div>
+                    </li>
+                </ul>
+            </section>                
+            <section>
+                <button class="frm-add-book__btn-submit" type="submit">Add book</button>
+                <button class="frm-add-book__btn-cancel" type="button">Cancel</button>
+            </section>
         </form>
     </div>
     <div class="footer">

@@ -36,6 +36,11 @@ body {
     background: rgb(231, 231, 231);
 }
 
+.dashboard__sort-container select {
+    font-size: 1.1em;
+    padding: 2px;
+}
+
 button {
     border: none;
     border-radius: 5px;
@@ -187,15 +192,18 @@ button:hover {
     margin-left: 30px;
 }
 
+.frm-add-book .input-container {
+    width: 200px;
+}
 
 button:hover,
 img:hover,
 .book__chk-container:hover,
+.input-container:hover,
 input[type=text]:hover,
-input[type=checkbox]:hover,
 textarea:hover {
   /*border: 1px solid turquoise;*/
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
 }
 
 .footer {

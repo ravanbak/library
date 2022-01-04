@@ -30,7 +30,10 @@ function init() {
     document.querySelector('.frm-add-book__btn-cancel').addEventListener('click', newBookFrmCancel);
     document.querySelector('.frm-add-book').addEventListener('submit', newBookFrmSubmit);
 
+    document.querySelector('.dashboard__sort-container select').addEventListener('change', (e) => sortBooks(e.target.value));
+
     libraryLoadBookData();
+    sortBooks('title'); // default sort
     displayBooks();
 }
 
@@ -53,6 +56,23 @@ function libraryToggleBookRead(e) {
     }
 }
 
+function sortBooks(sortField) {
+    switch (sortField) {
+        case 'title':
+        case 'author':
+            myLibrary.sort((a, b) => (a[sortField].toUpperCase() > b[sortField].toUpperCase()) ? 1 : -1);
+            break;
+        case 'pages':
+            myLibrary.sort((a, b) => (+a.pages > +b.pages) ? 1 : -1);
+            break;
+        case 'read':
+            myLibrary.sort((a, b) => (!a.read) ? 1 : -1);
+            break;
+    }
+
+    displayBooks();
+}
+
 function displayBooks() {
     const unread = myLibrary.filter((el) => !el.read).length;
 
@@ -67,7 +87,7 @@ function displayBooks() {
         books.removeChild(books.firstChild);
     }
 
-    myLibrary.sort((a, b) => (a.title.toUpperCase() < b.title.toUpperCase()) ? -1 : 1);
+    //myLibrary.sort((a, b) => (a.title.toUpperCase() < b.title.toUpperCase()) ? -1 : 1);
 
     // display all books
     myLibrary.forEach((book, idx) => {
